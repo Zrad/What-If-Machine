@@ -3,11 +3,9 @@ from signal import pause
 import os
 
 Button.was_held = False
-Random = True
-os.system("sudo systemctl start tvplayer.service")
-os.system("clear > /dev/tty1")
+os.system("sudo systemctl start tvplayer.service") #starts the service to play episodes right away
 
-def held(btn):
+def held(btn): #If the button is held, it will stop the normal TVPlayer service and start the Hypnotoad service
     btn.was_held = True
     os.system("sudo systemctl stop tvplayer.service")
     os.system("sudo systemctl restart hypnotoad.service")
@@ -17,12 +15,11 @@ def released(btn):
         pressed()
     btn.was_held = False
 
-def pressed():
-    random = True
+def pressed(): #If the button was pressed, it will stop the Hypnotoad service and start the TVPlayer service
     os.system("sudo systemctl stop hypnotoad.service")
     os.system("sudo systemctl restart tvplayer.service")
 
-btn = Button(12)
+btn = Button(12) #Defines the button on GPIO pin 12
 
 btn.when_held = held
 btn.when_released = released
