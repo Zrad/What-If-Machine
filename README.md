@@ -8,6 +8,7 @@ The left button is wired to the switch on the display which either toggles it on
 There are three services to create, but only the buttons.service will start at boot. The other two are started and stopped depending on the button presses in the buttons.py script.
 
 Link to the 3D printed files: [Thingiverse link](https://www.thingiverse.com/thing:4946494)
+
 Link to more images: [Imgur link](https://imgur.com/gallery/OVnPsT3)
 
 ![image](https://user-images.githubusercontent.com/47491287/131703200-dfcf3027-22c8-43ea-9635-09dc7be422cd.png)
